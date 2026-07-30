@@ -1,14 +1,26 @@
 Algorithm BFS(Graph, Start_Node)
 
-1. Create an empty set called Visited.
-2. Create an empty Queue.
-3. Enqueue Start_Node into Queue.
-4. Add Start_Node to Visited.
-5. While Queue is not empty:
-      a. Dequeue the front node.
-      b. Visit (print) the node.
-      c. For each Neighbour of the node:
-            i. If Neighbour is not in Visited:
+ Create an empty set called Visited.
+ Create an empty Queue.
+ Enqueue Start_Node into Queue.
+ Add Start_Node to Visited.
+ While Queue is not empty:
+       Dequeue the front node.
+       Visit (print) the node.
+       For each Neighbour of the node:
+             If Neighbour is not in Visited:
                  - Add Neighbour to Visited.
                  - Enqueue Neighbour into Queue.
-6. End.
+ End.
+
+Algorithm DFS(Graph, Node)
+
+ Create an empty set called Visited.
+ Define a function DFS(Node):
+       If Node is not in Visited:
+             Visit (print) the Node.
+              Add Node to Visited.
+              For each Neighbour of Node:
+                   Call DFS(Neighbour).
+ Call DFS(Start_Node).
+ End.
