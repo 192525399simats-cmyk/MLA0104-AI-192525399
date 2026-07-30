@@ -16,3 +16,19 @@ Algorithm BFS(Graph, Start_Node)
          - Enqueue(Neighbor)
 6. End
 ```
+
+### DFS (Depth-First Search) - Pseudocode
+
+```text
+Algorithm DFS(Graph, Start_Node)
+
+1. Create an empty set Visited.
+2. Define function DFS(Node):
+   a. If Node is not in Visited:
+      i. Visit(Node)
+      ii. Add Node to Visited
+      iii. For each Neighbor in Graph[Node]:
+           DFS(Neighbor)
+3. Call DFS(Start_Node)
+4. End
+```
