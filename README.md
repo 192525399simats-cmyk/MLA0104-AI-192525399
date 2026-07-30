@@ -1,26 +1,18 @@
+### BFS (Breadth-First Search) - Pseudocode
+
+```text
 Algorithm BFS(Graph, Start_Node)
 
- Create an empty set called Visited.
- Create an empty Queue.
- Enqueue Start_Node into Queue.
- Add Start_Node to Visited.
- While Queue is not empty:
-       Dequeue the front node.
-       Visit (print) the node.
-       For each Neighbour of the node:
-             If Neighbour is not in Visited:
-                 - Add Neighbour to Visited.
-                 - Enqueue Neighbour into Queue.
- End.
-
-Algorithm DFS(Graph, Node)
-
- Create an empty set called Visited.
- Define a function DFS(Node):
-       If Node is not in Visited:
-             Visit (print) the Node.
-              Add Node to Visited.
-              For each Neighbour of Node:
-                   Call DFS(Neighbour).
- Call DFS(Start_Node).
- End.
+1. Create an empty set Visited.
+2. Create an empty Queue.
+3. Enqueue(Start_Node).
+4. Add Start_Node to Visited.
+5. While Queue is not empty:
+   a. Node ← Dequeue()
+   b. Visit(Node)
+   c. For each Neighbor in Graph[Node]:
+      i. If Neighbor is not in Visited:
+         - Add Neighbor to Visited
+         - Enqueue(Neighbor)
+6. End
+```
