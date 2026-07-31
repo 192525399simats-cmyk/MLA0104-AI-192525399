@@ -1,4 +1,16 @@
 **AI Maze Escape (BFS)**
+
+AI Maze Escape Logic
+
+Represent the maze as a 2D grid.
+Treat each empty cell as a node.
+Start from the START position.
+Use Breadth First Search (BFS) to explore all possible paths.
+Visit neighboring cells (Up, Down, Left, Right).
+Ignore walls and already visited cells.
+Stop when the GOAL is reached.
+Trace back the path to obtain the shortest route.
+
 ## Pseudocode
 
 ```text
@@ -31,3 +43,184 @@ END WHILE
 END
 ```
 
+**N-Queens (Backtracking)**
+
+N-Queens Challenge Logic
+
+ Place one queen in each row.
+ Before placing a queen, check whether the position is safe.
+ A position is safe if no queen exists in the same column or diagonals.
+ If the position is safe, place the queen.
+ Continue placing queens in the next row.
+ If no safe position is found, remove the previous queen (backtracking).
+ Repeat until all queens are placed successfully.
+
+## Pseudocode
+
+```text
+START
+
+FUNCTION Solve(row)
+
+    IF row == N
+        Display board
+        RETURN TRUE
+
+    FOR each column
+
+        IF position is safe
+
+            Place Queen
+
+            IF Solve(row + 1)
+                RETURN TRUE
+
+            Remove Queen
+
+    RETURN FALSE
+
+CALL Solve(0)
+
+END
+```
+
+**Water Jug Puzzle (BFS)**
+
+Water Jug Puzzle Logic
+
+ Start with both jugs empty.
+ Generate all possible actions:
+   - Fill a jug.
+   - Empty a jug.
+   - Pour water from one jug to another.
+ Represent each water level as a state.
+ Use Breadth First Search (BFS) to explore all possible states.
+ Avoid revisiting previously explored states.
+ Continue until exactly 8 litres is obtained in one jug.
+ Display the sequence of actions taken.
+
+## Pseudocode
+
+```text
+START
+
+Create queue
+Insert initial state (0,0)
+
+WHILE queue is not empty
+
+    Remove current state
+
+    IF target amount is found
+        Display solution
+        STOP
+
+    Generate all possible next states
+
+        Fill Jug1
+        Fill Jug2
+        Empty Jug1
+        Empty Jug2
+        Pour Jug1 → Jug2
+        Pour Jug2 → Jug1
+
+    Add unvisited states to queue
+
+END WHILE
+
+END
+```
+
+**Connect Four (Minimax)**
+
+Connect Four Logic
+
+ Create an empty 6×7 game board.
+ The human player makes the first move.
+ The AI evaluates all valid moves.
+ The AI selects the best move using the Minimax algorithm with Alpha-Beta Pruning.
+ Alternate turns between the player and the AI.
+ After every move, check for four consecutive pieces horizontally, vertically, or diagonally.
+ If a player connects four pieces, declare the winner.
+ If the board is full without a winner, declare a draw.
+
+## Pseudocode
+
+```text
+START
+
+Create empty game board
+
+WHILE game is not over
+
+    Player makes a move
+
+    IF player wins
+        Display "Player Wins"
+        STOP
+
+    AI evaluates all valid moves
+
+    Apply Minimax with Alpha-Beta Pruning
+
+    AI chooses the best move
+
+    IF AI wins
+        Display "AI Wins"
+        STOP
+
+    IF board is full
+        Display "Draw"
+        STOP
+
+END WHILE
+
+END
+```
+
+**8-Puzzle (A* Search)**
+
+8-Puzzle AI Challenge Logic
+
+ Represent the puzzle as a 3×3 board.
+ Treat the blank tile (0) as the movable space.
+ Generate all possible moves of the blank tile.
+ Use the A* Search algorithm to find the optimal solution.
+ Calculate:
+   - g(n): Cost from the start state.
+   - h(n): Manhattan Distance heuristic.
+   - f(n) = g(n) + h(n).
+ Select the state with the smallest f(n).
+ Repeat until the goal state is reached.
+ Display the sequence of moves and the minimum number of moves required.
+
+## Pseudocode
+
+```text
+START
+
+Create OPEN list
+Insert initial state
+
+WHILE OPEN list is not empty
+
+    Select state with lowest f(n)
+
+    IF state is GOAL
+        Display solution path
+        STOP
+
+    Generate all possible moves
+
+    Calculate
+
+        g(n) = Cost from start
+        h(n) = Manhattan Distance
+        f(n) = g(n) + h(n)
+
+    Insert new states into OPEN list
+
+END WHILE
+
+END
+```
