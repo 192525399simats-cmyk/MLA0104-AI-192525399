@@ -1,34 +1,33 @@
-*AI Maze Escape (Shortest Path)*
-Logic
-Represent the maze as a 2D grid.
-Treat every empty cell as a node.
-Use Breadth First Search (BFS) because every move has equal cost.
-Explore neighbouring cells (Up, Down, Left, Right).
-Stop when the Goal is reached.
-Reconstruct the shortest path.
+**AI Maze Escape (BFS)**
+## Pseudocode
 
-*Pseudocode*
-
+```text
 START
 
-Create Queue
-Insert START into Queue
-Mark START as Visited
+Initialize queue
+Enqueue START node
+Mark START as visited
 
-WHILE Queue is not empty
+WHILE queue is not empty
 
-    Remove first node
+    Dequeue current node
 
-    IF node is GOAL
-        Print path
+    IF current node is GOAL
+        Display shortest path
         STOP
 
-    FOR each neighbour
-        IF neighbour is valid AND not visited
-            Mark visited
-            Store parent
-            Insert neighbour into Queue
+    FOR each neighboring cell (Up, Down, Left, Right)
+
+        IF neighbor is inside maze
+           AND neighbor is not a wall
+           AND neighbor is not visited
+
+            Mark neighbor as visited
+            Store parent of neighbor
+            Enqueue neighbor
 
 END WHILE
 
 END
+```
+
